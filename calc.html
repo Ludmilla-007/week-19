@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "calculator">
+        <p class ="num1">Number 1: </p>
+        <input type = "text" id = "n1">
+            <div class = "buttons">
+            <button class="btn" id="plus" onclick="ev='+'">+</button>
+            <button class="btn" id="minus" onclick="ev='-'">-</button>
+            <button class="btn" id="multiply" onclick="ev='*'">*</button>
+            <button class="btn" id="division" onclick="ev='/'">/</button>
+            </div>
+        <p class="num2">Number 2: </p>
+        <input type = "text" id = "n2">
+            <button class="btn_result" onclick="getResult()">=</button>
+            <p id = "result">Result:</p>
+            <div id="errorMessage"></div>
+        </div>
+            <script>
+        let ev;
+        function getResult() {
+        let result;
+        let n1 = Number(document.getElementById("n1").value);
+        let n2 = Number(document.getElementById("n2").value);
+        switch (ev) {
+            case '+':
+                result = n1 + n2;
+                break;
+            case '-':
+                result = n1 - n2;
+                break;
+            case '*':
+                result = n1 * n2;
+                break;
+                case '/':
+                result = n1 / n2;
+                break;
+        }
+        document.getElementById("result").innerHTML = result;
+        if (n2==0 &&
+        result == n1 / n2){
+        document.getElementById("result").innerHTML='На ноль делить нельзя!' }
+        }
+        
+        class Calc{}
+    
+        </script>
+</body>
+</html>
